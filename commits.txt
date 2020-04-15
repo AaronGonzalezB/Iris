@@ -1,0 +1,11 @@
+commit e6e83544eac0f1921b9f63e1ace22a413b7e42f1
+Author: Aaron Gonzalez <aargonzalezbe@unal.edu.co>
+Date:   Wed Apr 15 00:12:48 2020 -0500
+
+    Clasificacion del Iris dataset unicamente con datos del sepalo
+
+commit 727e54d607749abcd01b3e66a1aa20d7b1c8963a
+Author: Aaron Gonzalez <aargonzalezbe@unal.edu.co>
+Date:   Wed Apr 15 00:09:48 2020 -0500
+
+    Ejericio de clafisicacion con Iris dataset y sklearn

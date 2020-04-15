@@ -105,5 +105,3 @@ algoritmo = DecisionTreeClassifier()
 algoritmo.fit(X_train, y_train)
 Y_pred = algoritmo.predict(X_test)
 print('Precision de K Vecinos mas cercanos: {}'.format(algoritmo.score(X_train, y_train)))
-
-# Ejercicio - Modelo para predecir el Iris de acuerdo al Sepalo y el Iris de acuerdo al petalo
