@@ -1,5 +1,5 @@
 """
-Classifying Iris species only with Petal features
+Classifying Iris species only with Sepal features
 """
 
 import numpy as np
@@ -11,9 +11,10 @@ from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
-# Import and delete Sepal features
+# Import and delete Petal features
 iris = pd.read_csv("Iris.csv")
-iris = iris.drop(['Id','SepalLengthCm','SepalWidthCm'], axis = 1)
+
+iris = iris.drop(['Id','PetalLengthCm','PetalWidthCm'], axis = 1)
 print(iris.head())
 
 print('Informacion del dataset:')
@@ -25,17 +26,17 @@ print(iris.describe())
 print('Distribucion de datos por especie:')
 print(iris.groupby('Species').size())
 
-# Visualize Petal features
+# Visualize Sepal features
 fig = iris[iris.Species == 'Iris-setosa'].plot(kind = 'scatter',
-            x = 'PetalLengthCm', y = 'PetalWidthCm', color = 'blue', label = 'Setosa')
+            x = 'SepalLengthCm', y = 'SepalWidthCm', color = 'blue', label = 'Setosa')
 iris[iris.Species == 'Iris-versicolor'].plot(kind = 'scatter',
-      x = 'PetalLengthCm', y = 'PetalWidthCm', color = 'green', label = 'Versicolor', ax = fig)
+      x = 'SepalLengthCm', y = 'SepalWidthCm', color = 'green', label = 'Versicolor', ax = fig)
 iris[iris.Species == 'Iris-virginica'].plot(kind = 'scatter',
-      x = 'PetalLengthCm', y = 'PetalWidthCm', color = 'red', label = 'Virginica', ax = fig)
+      x = 'SepalLengthCm', y = 'SepalWidthCm', color = 'red', label = 'Virginica', ax = fig)
 
-fig.set_xlabel('Petalo - Longitud')
-fig.set_ylabel('Petalo - Ancho')
-fig.set_title('Petalo - Longitud vs Ancho')
+fig.set_xlabel('Sepalo - Longitud')
+fig.set_ylabel('Sepalo - Ancho')
+fig.set_title('Sepalo - Longitud vs Ancho')
 plt.show()
 
 # Target and features
@@ -66,4 +67,4 @@ print('Precision de K Vecinos mas cercanos: {}'.format(algoritmo.score(X_train, 
 algoritmo = DecisionTreeClassifier()
 algoritmo.fit(X_train, y_train)
 Y_pred = algoritmo.predict(X_test)
-print('Precision de Arboles de Decision: {}'.format(algoritmo.score(X_train, y_train)))
+print('Precision de Arbol de Decision: {}'.format(algoritmo.score(X_train, y_train)))
